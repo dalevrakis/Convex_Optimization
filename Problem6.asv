@@ -52,4 +52,4 @@ hold on
 [x_est_FISTA, f1k_iter_FISTA, iter_FISTA] = FISTA(A, b, x_init, f1_optval, c, lambda);
 semilogy(1:iter_FISTA+1,f1k_iter_FISTA-f1_optval);
 
-legend({'$ISTA$','$FISTA$'},'Interpreter','latex');
+legend({'$ISTA$','$x_1^{opt}$','$x_2^{opt}$'},'Interpreter','latex');
