@@ -1,8 +1,8 @@
 clc; clear; close all;
 
 % Data Generation
-n = 200;
-s = 10;
+n = 1000;
+s = 50;
 m = ceil(2*s*log(n));
 
 %Non zero elements
