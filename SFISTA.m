@@ -40,8 +40,9 @@ function [x_est, fk_iter, iter] = SFISTA(A, b, ro, D, x_init, f_opt, epsilon)
             break;
         end
         
-        new_x_k = y_k - (1/L)*subg_k;
-        
+        new_x_k = Soft_Thresholding(y_k - (1/L)*subg_k, 1/L);
+%         new_x_k = y_k - (1/L)*subg_k;
+
         new_step = ( 1+sqrt(1+4*step^2) )/2 ;
 
         y_k = new_x_k  + ( (step-1)/new_step )*(new_x_k - x_k);

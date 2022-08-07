@@ -17,18 +17,18 @@ for i=1:size(n,2)
         
         % b = rand(m,1);
 
-        % cvx_begin quiet
-        %     variables x(n)
-        %     minimize 0
-        %     subject to
-        %         A*x==b;
-        %         x>=0;
-        % cvx_end
-
-        % if strcmp('Infeasible',cvx_status) == 1
-        %     fprintf("Problem Infeasible\n");
-        %     return
-        % end
+%         cvx_begin quiet
+%             variables x(n)
+%             minimize 0
+%             subject to
+%                 A*x==b;
+%                 x>=0;
+%         cvx_end
+% 
+%         if strcmp('Infeasible',cvx_status) == 1
+%             fprintf("Problem Infeasible\n");
+%             return
+%         end
         
         P_S1 = @(x) x - A'*((A*A')\(A*x-b));
         P_S2 = @(x) max(x,0);
